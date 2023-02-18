@@ -40,7 +40,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="flex w-full mx-auto gap-3 md:bg-transparent bg-[#042D29] justify-around py-5">
+    <div className="flex w-full mx-auto gap-3 md:bg-transparent bg-[#042D29] justify-around py-5 mb-5">
       <p className="block md:hidden font-bold text-3xl underline text-gray-400">
         NewsApp
       </p>
