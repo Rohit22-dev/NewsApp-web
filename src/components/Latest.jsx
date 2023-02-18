@@ -22,8 +22,8 @@ const Latest = () => {
 
   return (
     <div className="flex flex-[0.4]  justify-center items-center ">
-      <div className="rounded-lg shadow-inner shadow-neutral-400 h-5/6 w-11/12 flex flex-col items-center justify-start py-1  overflow-y-scroll scroll-hide">
-        <span className="text-lg font-semibold mb-5">Latest News</span>
+      <div className="rounded-lg shadow-inner shadow-neutral-400 h-fit w-11/12 flex flex-col items-center justify-start py-1  overflow-y-scroll scroll-hide">
+        <span className="text-xl font-bold my-4 tracking-widest">Latest News</span>
         {Data && Data.results.map((item) => (
           <LatestNewsBox data={item} />
         ))}

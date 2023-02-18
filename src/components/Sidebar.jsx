@@ -9,19 +9,8 @@ const Sidebar = () => {
 
       <div className=' m-5  border-spacing-1 p-2 flex flex-col gap-5 md:font-extrabold text-yellow-50 '>
             {['Business','Entertainment','Environment','Food','Health','Politics','Science','Sports','Technology','Top','World'].map((item)=> (
-              <a className='hover:underline transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-250' href=''>:{item}</a>
+              <button className=' hover:text-red-500 hover:  focus:text-red-500 cursor-pointer self-start' >{item}</button>
             ))}
-        {/* <a href=''>Business</a>
-        <a href=''>Entertainment</a>
-        <a href=''>Environment</a>
-        <a href=''>Food</a>
-        <a href=''>Health</a>
-        <a href=''>Politics</a>
-        <a href=''>Science</a>
-        <a href=''>Sports</a>
-        <a href=''>Technology</a>
-        <a href=''>Top</a>
-        <a href=''>World</a> */}
       </div>
 
     </div>
