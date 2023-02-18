@@ -24,20 +24,8 @@ const Sidebar = () => {
           </button>
         ))}
       </div>
-      <p className="mt-auto text-sm font-semibold mx-2">
-        In collaboration🤝 of{" "}
-        <a
-          href="https://github.com/Rohit22-dev"
-          className="font-bold italic text-teal-600 cursor-pointer"
-        >
-          Octivion
-        </a>{" "}
-        and{" "}
-        <span className="font-bold italic text-teal-600 cursor-pointer">
-          CrypticCode
-        </span>
-        .
-      </p>
+      <p className='mt-auto text-sm font-semibold'>In collaboration🤝 of Octivion and CrypticCode.</p>
+      {/* <Clock/> */}
     </div>
   );
 };
