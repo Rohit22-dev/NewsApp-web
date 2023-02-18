@@ -1,4 +1,5 @@
 import journalist from "../assets/journalist.png"
+import Clock from "./Clock";
 
 const Sidebar = () => {
   return (
@@ -23,9 +24,10 @@ const Sidebar = () => {
             {item}
           </button>
         ))}
-      </div>
-      <p className='mt-auto text-sm font-semibold'>In collaboration🤝 of Octivion and CrypticCode.</p>
+      </div><hr/>
       {/* <Clock/> */}
+
+      <p className='mt-auto text-sm font-semibold'>In collaboration🤝 of Octivion and CrypticCode.</p>
     </div>
   );
 };
