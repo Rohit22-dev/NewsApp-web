@@ -13,7 +13,7 @@ const Sidebar = () => {
             ))}
       </div>
       <p className='mt-auto text-sm font-semibold'>In collaboration🤝 of Octivion and CrypticCode.</p>
-
+      {/* <Clock/> */}
     </div>
   )
 }
