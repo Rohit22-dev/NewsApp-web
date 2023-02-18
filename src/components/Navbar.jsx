@@ -1,4 +1,5 @@
 import { FaHamburger } from "react-icons/fa";
+import moment from "moment";
 
 const Navbar = () => {
   return (
@@ -22,6 +23,13 @@ const Navbar = () => {
             className="relative hover:scale-125 ease-in-out duration-200 "
           />
         </button>
+
+        
+        <div>
+          <b>{moment().format('Do MMM YYYY')}</b>
+          <br></br>
+          <b>{moment().format(' h:mm:ss a')}</b>
+        </div>
     </div>
   );
 };
