@@ -8,7 +8,7 @@ const Latest = () => {
     const func = async () => {
       try {
         await fetch(
-          "https://newsdata.io/api/1/news?apikey=pub_15166dda739eec2fd13572edf999e308802d8"
+          "https://newsdata.io/api/1/news?apikey=pub_15166dda739eec2fd13572edf999e308802d8&language=en"
         )
           .then((res) => res.json())
           .then((data) => setData(data));
