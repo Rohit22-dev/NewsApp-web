@@ -19,7 +19,7 @@ const Sidebar = () => {
           "Top",
           "World",
         ].map((item) => (
-          <button className=" hover:text-red-500 hover:animate-bounce  focus:text-red-500 cursor-pointer self-start">
+          <button className=" hover:text-red-500  focus:text-red-500 cursor-pointer self-start">
             {item}
           </button>
         ))}
