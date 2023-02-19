@@ -6,10 +6,11 @@
     top: 50%;
     left: 50%;
     transform: translate(0%, 0%);
-    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 5);
     font-size: 24px;
     color: #4444;
     text-align: center;
+    
 }
 
 .clock::after{

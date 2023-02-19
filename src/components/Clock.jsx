@@ -25,7 +25,7 @@ class Clock extends Component {
   render() {
     return (
       <>
-        <div className="clock text-[#c21636]">
+        <div className="clock text-[#c21636] hidden lg:block">
           <div
             className="hour_hand"
             style={{

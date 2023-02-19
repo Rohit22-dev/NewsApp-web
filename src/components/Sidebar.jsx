@@ -12,7 +12,7 @@ const Sidebar = () => {
         <img src={journalist} />
       </p>
 
-      <div className=" m-5  border-spacing-1 p-2 flex flex-col gap-5 md:font-extrabold text-yellow-50  ">
+      <div className=" m-5  border-spacing-1 p-2 flex flex-col gap-5 md:font-extrabold text-yellow-50 ">
         {[
           "Business",
           "Entertainment",
