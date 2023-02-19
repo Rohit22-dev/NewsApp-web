@@ -12,23 +12,19 @@ const Sidebar = () => {
         <img src={journalist} />
       </p>
 
-      <div className=" m-5  border-spacing-1 p-2 flex flex-col gap-5 md:font-extrabold text-yellow-50 ">
+      <div className=" m-5  border-spacing-1 p-2 flex flex-col gap-5 md:font-extrabold text-yellow-50  ">
         {[
           "Business",
           "Entertainment",
-          "Environment",
-          "Food",
+          "General",
           "Health",
-          "Politics",
           "Science",
           "Sports",
           "Technology",
-          "Top",
-          "World",
         ].map((item, i) => (
           <button
             key={i}
-            className=" hover:text-red-500  focus:text-red-500 cursor-pointer self-start"
+            className=" hover:text-red-500  focus:text-red-500 cursor-pointer self-start hover:scale-110"
             onClick={()=>setLsearch(item)}
           >
             {item}
@@ -36,7 +32,7 @@ const Sidebar = () => {
         ))}
       </div>
       <hr />
-      {/* <Clock/> */}
+      <Clock/>
 
       <p className="mt-auto mx-2 text-sm font-semibold">
         In collaboration🤝 of{" "}

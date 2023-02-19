@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="space-x-2 flex flex-[0.75] justify-center">
         <input
           placeholder="Search..."
-          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold "
+          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold w-80 "
           onChange={(event) => setInput(event.target.value.toLowerCase())}
         />
         <button

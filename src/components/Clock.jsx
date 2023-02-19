@@ -25,7 +25,7 @@ class Clock extends Component {
   render() {
     return (
       <>
-        <div className="clock">
+        <div className="clock text-[#c21636]">
           <div
             className="hour_hand"
             style={{
@@ -41,7 +41,7 @@ class Clock extends Component {
           ></div>
 
           <div
-            className="sec_hand"
+            className="sec_hand "
             style={{
               transform: `rotateZ(${this.state.time.getSeconds() * 6}deg)`,
             }}
