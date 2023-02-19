@@ -44,10 +44,10 @@ const Navbar = () => {
       <p className="block md:hidden font-bold text-3xl underline text-gray-400">
         NewsApp
       </p>
-      <div className="space-x-2">
+      <div className="space-x-2 flex flex-[0.75] justify-center">
         <input
           placeholder="Search..."
-          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold"
+          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold "
         />
         <button className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner">
           <p className=" hover:scale-150 ease-in-out duration-200">🔍</p>
@@ -61,12 +61,12 @@ const Navbar = () => {
         />
       </button>
 
-      <div className="md:block hidden  ">
-        <b>{moment().format("Do MMM YYYY")}</b>
-        <br />
+      <div className="md:flex flex-[.25] items-center hidden  ">
+        <b>{moment().format("Do MMM YYYY")}</b>&nbsp;&nbsp;
         {/* <b>{moment().format(" h:mm:ss a")}</b> */}
+        &nbsp;&nbsp;&nbsp;
         <div className="border-[#c21636] border w-fit p-1 rounded-xl shadow-sm shadow-black">
-          <b className="text-[#c21636] flex items-center">
+          <b className="text-[#c21636] flex items-center ">
             {<AiFillCloud />} &nbsp;{weather}°C
           </b>
         </div>
