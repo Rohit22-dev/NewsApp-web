@@ -1,11 +1,20 @@
 import { FaHamburger } from "react-icons/fa";
 import { AiFillCloud } from "react-icons/ai";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../App";
 
 const Navbar = () => {
+  const { setSearch } = useContext(UserContext);
   const [weather, setWeather] = useState(null);
+  const [input, setInput] = useState("");
   const [location, setLocation] = useState({ latitude: 28.7, longitude: 77.1 });
+
+  const handleClick = () => {
+    setSearch(input);
+    setInput("");
+    console.log(input);
+  };
 
   useEffect(() => {
     const func = async () => {
@@ -20,7 +29,7 @@ const Navbar = () => {
           console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
         },
         (error) => {
-          console.log(error);
+          console.log(error.message);
         }
       );
 
@@ -48,9 +57,13 @@ const Navbar = () => {
         <input
           placeholder="Search..."
           className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold "
+          onChange={(event) => setInput(event.target.value.toLowerCase())}
         />
-        <button className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner">
-          <p className=" hover:scale-150 ease-in-out duration-200">🔍</p>
+        <button
+          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner hover:scale-110 duration-150 ease-in-out"
+          onClick={() => handleClick()}
+        >
+          <p className=" scale-125 ease-in-out duration-200">🔍</p>
         </button>
       </div>
       <button className="h-fit p-2.5 rounded-lg bg-transparent shadow-neutral-400 shadow-inner md:hidden">
