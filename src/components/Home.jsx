@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="flex-col flex-1 bg-[#ffe8d7]">
       <Navbar />
-      <div className="flex h-[92.2%]">
+      <div className="flex h-[85%]">
         <News />
         <Latest />
       </div>

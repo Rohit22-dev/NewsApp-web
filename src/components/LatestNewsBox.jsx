@@ -2,16 +2,9 @@ import empty from "../assets/empty_news.jpeg";
 
 const LatestNewsBox = ({ data }) => {
   return (
-    <div className="m-1 border border-gray-400 rounded-lg flex overflow-hidden shadow-md cursor-pointer transition duration-200 hover:scale-105 ease-out w-full">
-      {data.image_url ? (
-        <img src={data.image_url} width={70} height={70} />
-      ) : (
-        <img src={empty} width={70} height={70} />
-      )}
-
-      <p className="p-1 tracking-tighter leading-normal line-clamp-2">
-        {data.title}
-      </p>
+    <div className="border-2 border-gray-400 w-full mb-1 h-20 rounded-lg flex gap-1 cursor-pointer hover:shadow-md hover:shadow-slate-700 hover:scale-105">
+        <img src={data.urlToImage} className="h-full w-20 object-fill rounded-md"/>
+        <p className="text-ellipsis text-sm overflow-hidden leading-3 py-1 tracking-tight">{data.title}</p>
     </div>
   );
 };
