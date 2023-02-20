@@ -5,15 +5,15 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
 
 const Navbar = () => {
-  const { setData } = useContext(UserContext);
+  const { setData,Data } = useContext(UserContext);
   const [weather, setWeather] = useState(null);
   const [input, setInput] = useState("");
   const [location, setLocation] = useState({ latitude: 28.7, longitude: 77.1 });
 
   const handleClick = () => {
-    setData.search(input);
+    setData({ ...Data, search: input });
     setInput("");
-    console.log(input);
+    // console.log(input);
   };
 
   useEffect(() => {

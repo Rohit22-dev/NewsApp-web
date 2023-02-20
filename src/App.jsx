@@ -12,8 +12,8 @@ const App = () => {
     detailedNews: null,
   });
 
-  const url = `https://newsapi.org/v2/everything?q=${Data.search}&apiKey=28fcd7cc4ca447d4ba11db91d8982618`;
   useEffect(() => {
+    const url = `https://newsapi.org/v2/everything?q=${Data.search}&apiKey=28fcd7cc4ca447d4ba11db91d8982618`;
     const func = async () => {
       try {
         await fetch(url)
@@ -24,8 +24,8 @@ const App = () => {
       }
     };
     func();
-    console.log(Data.news);
-  }, [Data.search]);
+    // console.log(Data.news, url);
+  },[Data.search]);
   return (
     <UserContext.Provider value={{ Data, setData }}>
       <div className="flex h-screen ">
