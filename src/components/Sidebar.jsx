@@ -4,7 +4,7 @@ import journalist from "../assets/journalist.png";
 import Clock from "./Clock";
 
 const Sidebar = () => {
-  const { setData } = useContext(UserContext);
+  const { Data, setData } = useContext(UserContext);
   return (
     <div className="hidden md:flex flex-col flex-[0.25] bg-[#042D29] text-neutral-400 items-center py-3 ">
       <p className="font-bold text-2xl underline flex items-center text-[#c21636]">
