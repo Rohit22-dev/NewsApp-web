@@ -5,13 +5,13 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
 
 const Navbar = () => {
-  const { setData,Data } = useContext(UserContext);
+  const { setData, Data } = useContext(UserContext);
   const [weather, setWeather] = useState(null);
   const [input, setInput] = useState("");
   const [location, setLocation] = useState({ latitude: 28.7, longitude: 77.1 });
 
   const handleClick = () => {
-    setData({ ...Data, search: input });
+    setData({ ...Data, search: input, newsExpand: false });
     setInput("");
     // console.log(input);
   };
@@ -64,7 +64,7 @@ const Navbar = () => {
           <p className=" scale-125 ease-in-out duration-200">🔍</p>
         </button>
       </div>
-      
+
       <button className="h-fit w-fit p-2.5 rounded-lg bg-transparent shadow-neutral-400 shadow-inner md:hidden">
         <FaHamburger
           size={20}
@@ -82,9 +82,6 @@ const Navbar = () => {
           </b>
         </div>
       </div>
-      
-
-
     </div>
   );
 };
