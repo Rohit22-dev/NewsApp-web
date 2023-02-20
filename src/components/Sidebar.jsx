@@ -4,7 +4,7 @@ import journalist from "../assets/journalist.png";
 import Clock from "./Clock";
 
 const Sidebar = () => {
-  const {setLsearch} = useContext(UserContext)
+  const { setData } = useContext(UserContext);
   return (
     <div className="hidden md:flex flex-col flex-[0.25] bg-[#042D29] text-neutral-400 items-center py-3 ">
       <p className="font-bold text-2xl underline flex items-center text-[#c21636]">
@@ -16,20 +16,16 @@ const Sidebar = () => {
         {[
           "Business",
           "Entertainment",
-          "Environment",
-          "Food",
           "Health",
-          "Politics",
           "Science",
           "Sports",
           "Technology",
-          "Top",
-          "World",
+          "General",
         ].map((item, i) => (
           <button
             key={i}
             className=" hover:text-red-500  focus:text-red-500 cursor-pointer self-start"
-            onClick={()=>setLsearch(item)}
+            onClick={() => setData.lsearch(item)}
           >
             {item}
           </button>

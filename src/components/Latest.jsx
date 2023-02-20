@@ -3,32 +3,34 @@ import { UserContext } from "../App";
 import LatestNewsBox from "./LatestNewsBox";
 
 const Latest = () => {
-  const [Data, setData] = useState(null);
-  const { lsearch } = useContext(UserContext);
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=28fcd7cc4ca447d4ba11db91d8982618&category=${lsearch}`;
+  const [Daata, setdata] = useState(null);
+  const { Data } = useContext(UserContext);
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=28fcd7cc4ca447d4ba11db91d8982618&category=${Data.lsearch}`;
 
   useEffect(() => {
     const func = async () => {
       try {
         await fetch(url)
           .then((res) => res.json())
-          .then((data) => setData(data));
+          .then((data) => setdata(data));
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
       }
     };
     func();
     // console.log(url);
-  }, [lsearch]);
+  }, [Data.lsearch]);
 
   return (
-    <div className="hidden md:flex flex-[0.4] lg:flex-[0.3] justify-center items-start ">
+    <div className="hidden lg:flex flex-[0.4] lg:flex-[0.3] justify-center items-start ">
       <div className="rounded-lg shadow-inner shadow-neutral-400 h-[90%] w-11/12 flex flex-col items-center justify-start py-1 px-4 overflow-scroll scroll-hide gap-1">
         <div className="text-xl font-bold my-4 tracking-widest">
           Latest News
         </div>
-        {Data &&
-          Data.articles.map((item, i) => <LatestNewsBox data={item} key={i} />)}
+        {Daata &&
+          Daata.articles.map((item, i) => (
+            <LatestNewsBox data={item} key={i} />
+          ))}
       </div>
     </div>
   );

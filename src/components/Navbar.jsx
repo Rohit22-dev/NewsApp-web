@@ -5,13 +5,13 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../App";
 
 const Navbar = () => {
-  const { setSearch } = useContext(UserContext);
+  const { setData } = useContext(UserContext);
   const [weather, setWeather] = useState(null);
   const [input, setInput] = useState("");
   const [location, setLocation] = useState({ latitude: 28.7, longitude: 77.1 });
 
   const handleClick = () => {
-    setSearch(input);
+    setData.search(input);
     setInput("");
     console.log(input);
   };
@@ -24,9 +24,7 @@ const Navbar = () => {
             latitude: position.coords.latitude.toFixed(2),
             longitude: position.coords.longitude.toFixed(2),
           });
-          // const latitude = position.coords.latitude.toFixed(2);
-          // const longitude = position.coords.longitude.toFixed(2);
-          console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+          // console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
         },
         (error) => {
           console.log(error.message);
@@ -49,14 +47,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="flex w-full mx-auto gap-3 md:bg-transparent bg-[#042D29] justify-around py-5 mb-5">
+    <div className="flex w-full mx-auto gap-3 md:bg-transparent bg-[#042D29] justify-around py-5 mb-5 sticky top-0 z-10">
       <p className="block md:hidden font-bold text-3xl underline text-gray-400">
         NewsApp
       </p>
-      <div className="space-x-2 flex flex-[0.75] justify-center">
+      <div className="space-x-2 flex-[0.75] justify-center sm:flex hidden">
         <input
           placeholder="Search..."
-          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold "
+          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold max-w-96"
           onChange={(event) => setInput(event.target.value.toLowerCase())}
         />
         <button
@@ -66,11 +64,10 @@ const Navbar = () => {
           <p className=" scale-125 ease-in-out duration-200">🔍</p>
         </button>
       </div>
-      <button className="h-fit p-2.5 rounded-lg bg-transparent shadow-neutral-400 shadow-inner md:hidden">
+      <button className="h-fit w-fit p-2.5 rounded-lg bg-transparent shadow-neutral-400 shadow-inner md:hidden">
         <FaHamburger
-          color="rgb(156,163,175)"
           size={20}
-          className="relative hover:scale-125 ease-in-out duration-200 "
+          className=" hover:scale-125 text-[rgb(156,163,175)] ease-in-out duration-200 hover:text-teal-500"
         />
       </button>
 

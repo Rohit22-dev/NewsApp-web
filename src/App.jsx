@@ -4,28 +4,31 @@ import Sidebar from "./components/Sidebar";
 
 const UserContext = createContext();
 const App = () => {
-  const [news, setNews] = useState(null);
-  const [search, setSearch] = useState("cars");
-  const [lsearch, setLsearch] = useState("science");
-  const url = `https://newsapi.org/v2/everything?q=${search}&apiKey=28fcd7cc4ca447d4ba11db91d8982618`;
+  const [Data, setData] = useState({
+    news: null,
+    search: "marvel",
+    lsearch: "Science",
+    newsExpand: false,
+    detailedNews: null,
+  });
+
+  const url = `https://newsapi.org/v2/everything?q=${Data.search}&apiKey=28fcd7cc4ca447d4ba11db91d8982618`;
   useEffect(() => {
     const func = async () => {
       try {
         await fetch(url)
           .then((res) => res.json())
-          .then((data) => setNews(data.articles));
+          .then((data) => setData({ ...Data, news: data.articles }));
       } catch (error) {
         console.log(error);
       }
     };
     func();
-    // console.log(search, url);
-  }, [search]);
+    console.log(Data.news);
+  }, [Data.search]);
   return (
-    <UserContext.Provider
-      value={{ news, search, setSearch, lsearch, setLsearch }}
-    >
-      <div className="flex h-screen">
+    <UserContext.Provider value={{ Data, setData }}>
+      <div className="flex h-screen ">
         <Sidebar />
         <Home />
         {/* <div>clock</div>
