@@ -32,7 +32,7 @@ const Sidebar = () => {
         ))}
       </div>
       <hr />
-      {/* <Clock/> */}
+      <Clock/>
 
       <p className="mt-auto mx-2 text-sm font-semibold">
         In collaboration🤝 of{" "}

@@ -64,6 +64,7 @@ const Navbar = () => {
           <p className=" scale-125 ease-in-out duration-200">🔍</p>
         </button>
       </div>
+      
       <button className="h-fit w-fit p-2.5 rounded-lg bg-transparent shadow-neutral-400 shadow-inner md:hidden">
         <FaHamburger
           size={20}
@@ -81,6 +82,9 @@ const Navbar = () => {
           </b>
         </div>
       </div>
+      
+
+
     </div>
   );
 };

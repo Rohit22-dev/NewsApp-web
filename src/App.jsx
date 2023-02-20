@@ -31,10 +31,7 @@ const App = () => {
       <div className="flex h-screen ">
         <Sidebar />
         <Home />
-        {/* <div>clock</div>
-      <div className="container">
-       <Clock></Clock>
-      </div> */}
+        
       </div>
     </UserContext.Provider>
   );
