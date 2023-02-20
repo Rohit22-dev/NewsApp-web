@@ -24,7 +24,7 @@ const App = () => {
       }
     };
     func();
-    console.log(Data.newsExpand);
+    // console.log(Data.newsExpand);
   },[Data.search]);
   return (
     <UserContext.Provider value={{ Data, setData }}>
