@@ -4,16 +4,12 @@ import DetailedNews from "./DetailedNews";
 import Latest from "./Latest";
 import Navbar from "./Navbar";
 import News from "./News";
-import TextScroller from "./TextScroller";
 
 const Home = () => {
   const { Data } = useContext(UserContext);
   return (
     <div className="flex-col flex-1 bg-[#ffe8d7] relative overflow-hidden">
       <Navbar />
-      <div>
-        <TextScroller text="Live news" />
-      </div>
       <div className="sm:flex h-[85%] ">
         
         {Data.newsExpand ? <DetailedNews /> : <News />}
