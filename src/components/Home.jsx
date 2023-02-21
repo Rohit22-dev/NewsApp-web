@@ -32,7 +32,7 @@ const Home = () => {
         scrollamount="10"
         direction="left"
         width="100%"
-        className="bg-rose-500 text-white"
+        className="bg-[#c21636] text-white"
       >
         {Daata ? Daata.articles[0].title : "----"}
       </marquee>

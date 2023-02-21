@@ -16,7 +16,7 @@ const Sidebar = () => {
         onClick={() => handleClick()}
       >
         NewsApp
-        <img src={journalist} />
+        <img src={journalist}/>
       </button>
 
       <div className=" m-5  border-spacing-1 p-2 flex flex-col gap-5 md:font-extrabold text-yellow-50 ">
@@ -39,7 +39,10 @@ const Sidebar = () => {
         ))}
       </div>
       <hr />
-      <Clock/>
+      <div className="absolute bottom-20 left-50 hidden lg:block ">
+        <Clock/>
+      </div>
+      
 
       <p className="mt-auto mx-2 text-sm font-semibold">
         In collaboration🤝 of{" "}
