@@ -11,10 +11,13 @@ const Navbar = () => {
   const [location, setLocation] = useState({ latitude: 28.7, longitude: 77.1 });
 
   const handleClick = () => {
-    setData({ ...Data, search: input, newsExpand: false });
+    const str = input.replace(/\s+g/, "+");
+    setData({ ...Data, search: str, newsExpand: false });
     setInput("");
     // console.log(input);
   };
+
+  const handleInput = () => {};
 
   useEffect(() => {
     const func = async () => {
@@ -54,7 +57,7 @@ const Navbar = () => {
       <div className="space-x-2 flex-[0.75] justify-center sm:flex hidden">
         <input
           placeholder="Search..."
-          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold max-w-96"
+          className="h-fit p-2 rounded-lg bg-transparent shadow-neutral-400 shadow-inner outline-none no-underline font-bold max-w-96 md:text-black text-teal-200 caret-rose-500"
           onChange={(event) => setInput(event.target.value.toLowerCase())}
         />
         <button

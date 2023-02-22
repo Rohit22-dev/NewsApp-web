@@ -18,7 +18,7 @@ const Home = () => {
           .then((res) => res.json())
           .then((data) => setdata(data));
       } catch (error) {
-        console.log(error.message);
+        console.log("hello", error.message);
       }
     };
     func();
@@ -34,7 +34,7 @@ const Home = () => {
         width="100%"
         className="bg-rose-500 text-white"
       >
-        {Daata ? Daata.articles[0].title : "----"}
+        {Daata ? Daata.articles[0].title : "Waiting for data....  | if the problem is for long time check network connection or contact the owner."}
       </marquee>
       <div className="sm:flex h-[85%] ">
         {Data.newsExpand ? <DetailedNews /> : <News />}

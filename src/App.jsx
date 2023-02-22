@@ -20,18 +20,17 @@ const App = () => {
           .then((res) => res.json())
           .then((data) => setData({ ...Data, news: data.articles }));
       } catch (error) {
-        console.log(error);
+        console.log("hello", error);
       }
     };
     func();
     // console.log(Data.newsExpand);
-  },[Data.search]);
+  }, [Data.search]);
   return (
     <UserContext.Provider value={{ Data, setData }}>
       <div className="flex h-screen ">
         <Sidebar />
         <Home />
-        
       </div>
     </UserContext.Provider>
   );

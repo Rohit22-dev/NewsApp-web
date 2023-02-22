@@ -14,7 +14,7 @@ const Latest = () => {
           .then((res) => res.json())
           .then((data) => setdata(data));
       } catch (error) {
-        console.log(error.message);
+        console.log("hello", error);
       }
     };
     func();
