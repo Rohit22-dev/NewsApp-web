@@ -6,11 +6,16 @@ import Clock from "./Clock";
 const Sidebar = () => {
   const { Data, setData } = useContext(UserContext);
 
-  const handleClick = () =>{
-    setData({...Data,newsExpand: false})
-  }
+  const handleClick = () => {
+    setData({
+      ...Data,
+      newsExpand: false,
+      search: "",
+      givenOptionsClicked: false,
+    });
+  };
   return (
-    <div className="hidden md:flex flex-col flex-[0.25] bg-[#042D29] text-neutral-400 items-center py-3 ">
+    <div className="hidden md:flex flex-col flex-[0.2] bg-[#042D29] text-neutral-400 items-center py-3 ">
       <button
         className="font-bold text-2xl underline flex items-center text-[#c21636]"
         onClick={() => handleClick()}
@@ -32,14 +37,24 @@ const Sidebar = () => {
           <button
             key={i}
             className=" hover:text-red-500  focus:text-red-500 cursor-pointer self-start"
-            onClick={() => setData({...Data,lsearch:item})}
+            onClick={() => {
+              setData({
+                ...Data,
+                lsearch: item,
+                givenOptionsClicked: true,
+                search: "",
+              });
+              console.log(item);
+            }}
           >
             {item}
           </button>
         ))}
       </div>
       <hr />
-      <Clock/>
+      <div className="absolute bottom-20 left-50 hidden scale-75 lg:block ">
+        <Clock />
+      </div>
 
       <p className="mt-auto mx-2 text-sm font-semibold">
         In collaboration🤝 of{" "}

@@ -6,14 +6,23 @@ const UserContext = createContext();
 const App = () => {
   const [Data, setData] = useState({
     news: null,
-    search: "marvel",
-    lsearch: "Science",
+    search: "",
+    lsearch: "",
+    givenOptionsClicked: false,
     newsExpand: false,
     detailedNews: null,
   });
 
   useEffect(() => {
-    const url = `https://newsapi.org/v2/everything?q=${Data.search}&apiKey=28fcd7cc4ca447d4ba11db91d8982618`;
+    const endpoint =
+      Data.search !== ""
+        ? `everything?q=${Data.search}&`
+        : Data.givenOptionsClicked
+        ? `top-headlines?country=in&category=${Data.lsearch}&`
+        : `top-headlines?country=in&`;
+
+    // ? `top-headlines?country=in&`
+    const url = `https://newsapi.org/v2/${endpoint}apiKey=d41eaf42f9304394a5a2143e787e40ab`;
     const func = async () => {
       try {
         await fetch(url)
@@ -24,8 +33,8 @@ const App = () => {
       }
     };
     func();
-    // console.log(Data.newsExpand);
-  }, [Data.search]);
+    // console.log(endpoint, "dfghj");
+  }, [Data.search, Data.lsearch, Data.givenOptionsClicked]);
   return (
     <UserContext.Provider value={{ Data, setData }}>
       <div className="flex h-screen ">

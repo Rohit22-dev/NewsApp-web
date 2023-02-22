@@ -1,13 +1,22 @@
 import React, { useContext } from "react";
 import { UserContext } from "../App";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 const DetailedNews = () => {
-  const { Data } = useContext(UserContext);
+  const { Data, setData } = useContext(UserContext);
   const data = Data.detailedNews;
+
+  const handleClick = () => {
+    setData({ ...Data, newsExpand: false, search: "" });
+  };
   // console.log(Data.detailedNews);
   return (
-    <div className="flex flex-col flex-[0.7] w-full h-full justify-start items-center ml-3 overflow-y-scroll scroll-hide  shadow-inner shadow-neutral-400 rounded-lg bg-orange-100">
+    <div className="flex flex-col lg:flex-[0.7] w-full h-full justify-start items-center mx-3 lg:ml-3 overflow-y-scroll scroll-hide shadow-inner shadow-neutral-400 rounded-lg bg-orange-100 relative">
+      <FaArrowLeft
+        className="absolute top-5 left-5 scale-150 text-black hover:animate-pulse z-10 cursor-pointer"
+        onClick={() => handleClick()}
+      />
       <img
         src={data.urlToImage}
         className="h-2/3 w-full object-fill opacity-90"
@@ -27,9 +36,12 @@ const DetailedNews = () => {
           <span className="font-bold">Source:&nbsp;</span>
           {data.source.name ? data.source.name : "----"}
         </p>
-          <a className="p-2 bg-teal-500 rounded-md shadow-md shadow-black mr-2 hover:bg-rose-600 hover:scale-125 duration-200 ease-in-out cursor-pointer" href={data.url}>
-            <FaExternalLinkAlt />
-          </a>
+        <a
+          className="p-2 bg-teal-500 rounded-md shadow-md shadow-black mr-2 hover:bg-rose-600 hover:scale-125 duration-200 ease-in-out cursor-pointer"
+          href={data.url}
+        >
+          <FaExternalLinkAlt />
+        </a>
       </div>
     </div>
   );
