@@ -7,7 +7,7 @@ const DetailedNews = () => {
   const data = Data.detailedNews;
   // console.log(Data.detailedNews);
   return (
-    <div className="flex flex-col flex-[0.7] w-full h-full justify-start items-center ml-3 overflow-y-scroll scroll-hide  shadow-inner shadow-neutral-400 rounded-lg bg-orange-100">
+    <div className="flex flex-col flex-1  lg:flex-[0.7] w-full h-full justify-start items-center mx-3 lg:mr-0 overflow-y-scroll scroll-hide shadow-inner shadow-neutral-400 rounded-lg bg-orange-100">
       <img
         src={data.urlToImage}
         className="h-2/3 w-full object-fill opacity-90"

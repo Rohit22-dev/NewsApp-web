@@ -10,7 +10,7 @@ const Sidebar = () => {
     setData({...Data,newsExpand: false})
   }
   return (
-    <div className="hidden md:flex flex-col flex-[0.25] bg-[#042D29] text-neutral-400 items-center py-3 ">
+    <div className="hidden md:flex flex-col flex-[0.2] bg-[#042D29] text-neutral-400 items-center py-3 ">
       <button
         className="font-bold text-2xl underline flex items-center text-[#c21636]"
         onClick={() => handleClick()}
@@ -39,7 +39,7 @@ const Sidebar = () => {
         ))}
       </div>
       <hr />
-      <div className="absolute bottom-20 left-50 hidden lg:block ">
+      <div className="absolute bottom-20 left-50 hidden scale-75 lg:block ">
         <Clock/>
       </div>
       

@@ -22,7 +22,7 @@ const Home = () => {
       }
     };
     func();
-    console.log(Daata);
+    // console.log(Daata);
   }, []);
   return (
     <div className="flex-col flex-1 bg-[#ffe8d7] relative overflow-hidden">

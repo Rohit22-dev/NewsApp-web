@@ -8,14 +8,20 @@ const Navbar = () => {
   const { setData, Data } = useContext(UserContext);
   const [weather, setWeather] = useState(null);
   const [input, setInput] = useState("");
+  const [icon, setIcon] = useState("01d");
   const [location, setLocation] = useState({ latitude: 28.7, longitude: 77.1 });
 
+  const handleHome = () =>{
+    setData({...Data,newsExpand: false})
+  }
   const handleClick = () => {
     setData({ ...Data, search: input, newsExpand: false });
     setInput("");
     // console.log(input);
   };
-
+useEffect(()=>{
+  {weather?.weather?.icon && setIcon(weather.weather.icon)}
+},[weather])
   useEffect(() => {
     const func = async () => {
       navigator.geolocation.getCurrentPosition(
@@ -37,7 +43,7 @@ const Navbar = () => {
         )
           .then((response) => response.json())
           .then((data) => {
-            setWeather(data.main.temp);
+            setWeather(data);
           });
       } catch (error) {
         console.log(error);
@@ -48,7 +54,7 @@ const Navbar = () => {
 
   return (
     <div className="flex w-full mx-auto gap-3 md:bg-transparent bg-[#042D29] justify-around py-5 mb-5 sticky top-0 z-10">
-      <p className="block md:hidden font-bold text-3xl underline text-gray-400">
+      <p className="block md:hidden font-bold text-3xl underline text-gray-400 cursor-pointer" onClick={() => handleHome()}>
         NewsApp
       </p>
       <div className="space-x-2 flex-[0.75] justify-center sm:flex hidden">
@@ -76,9 +82,9 @@ const Navbar = () => {
         <b>{moment().format("Do MMM YYYY")}</b>&nbsp;&nbsp;
         {/* <b>{moment().format(" h:mm:ss a")}</b> */}
         &nbsp;&nbsp;&nbsp;
-        <div className="border-[#c21636] border w-fit p-1 rounded-xl shadow-sm shadow-black">
+        <div className="border-[#c21636] border w-fit p-1 rounded-xl shadow-sm shadow-black lg:block hidden">
           <b className="text-[#c21636] flex items-center ">
-            {<AiFillCloud />} &nbsp;{weather}°C
+            {<img src={`https://openweathermap.org/img/wn/${icon}.png`} className="scale-125 "/>} &nbsp;{weather && weather.main.temp}°C
           </b>
         </div>
       </div>
