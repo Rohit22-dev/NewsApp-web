@@ -32,7 +32,7 @@ const Dropdown_Nav = ({ toggle, setToggle }) => {
         [<IoNewspaperOutline size={24} />, "General"],
       ].map((Item, i) => (
         <button
-          className="flex flex-col flex-grow items-center justify-center hover:text-rose-600 hover:scale-[1.2] focus:text-rose-500 focus:scale-[1.2] active:text-rose-600 duration-150 ease-in-out transition-all"
+          className="flex flex-col flex-grow items-center justify-center hover:text-rose-600 hover:scale-[1.2] focus:text-rose-500 focus:scale-[1.2] duration-150 ease-in-out transition-all"
           key={i}
           onClick={() => {
             handleClick(Item[1]);
