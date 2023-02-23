@@ -27,7 +27,7 @@ const Latest = () => {
         <div className="text-xl font-bold my-4 tracking-widest">
           Latest News
         </div>
-        {Daata &&
+        {Daata?.articles &&
           Daata.articles.map((item, i) => (
             <LatestNewsBox data={item} key={i} />
           ))}

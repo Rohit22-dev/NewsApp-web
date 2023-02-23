@@ -24,7 +24,9 @@ const DetailedNews = () => {
       <div className="flex flex-col items-start w-full p-4">
         <h1 className="text-2xl font-extrabold ">{data.title}</h1>
         <h1 className="text-xl font-bold ">
-          {data.content.substring(0, data.content.indexOf("["))}
+          {data.content === null
+            ? "No data found !!!"
+            : data.content.substring(0, data.content.indexOf("["))}
         </h1>
         <p className="italic">{data.description}</p>
       </div>
