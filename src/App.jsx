@@ -22,7 +22,7 @@ const App = () => {
         : `top-headlines?country=in&`;
 
     // ? `top-headlines?country=in&`
-    const url = `https://newsapi.org/v2/${endpoint}apiKey=d41eaf42f9304394a5a2143e787e40ab`;
+    const url = `https://newsapi.org/v2/${endpoint}apiKey=28fcd7cc4ca447d4ba11db91d8982618`;
     const func = async () => {
       try {
         await fetch(url)

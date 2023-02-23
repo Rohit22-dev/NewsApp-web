@@ -10,7 +10,7 @@ const Home = () => {
   const { Data } = useContext(UserContext);
   const [Daata, setdata] = useState(null);
 
-  const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=d41eaf42f9304394a5a2143e787e40ab&category=general`;
+  const url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=28fcd7cc4ca447d4ba11db91d8982618&category=general`;
 
   useEffect(() => {
     const func = async () => {

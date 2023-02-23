@@ -5,7 +5,7 @@ import LatestNewsBox from "./LatestNewsBox";
 const Latest = () => {
   const [Daata, setdata] = useState(null);
   const { Data } = useContext(UserContext);
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=d41eaf42f9304394a5a2143e787e40ab&category=technology`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=28fcd7cc4ca447d4ba11db91d8982618&category=technology`;
 
   useEffect(() => {
     const func = async () => {
